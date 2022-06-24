@@ -17,7 +17,7 @@ ch2.queue_declare(queue='street1')
 
 # Receive message
 def callback(ch, method, properties, body):
-    print(f"Recive[{body}]")
+    print(f"Recive [{body}]")
 
 
 ch2.basic_consume(
