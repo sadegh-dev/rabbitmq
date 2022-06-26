@@ -9,15 +9,15 @@ conn = pika.BlockingConnection(pika.ConnectionParameters(
 
 
 # Create Channel
-ch1 = conn.channel()
+ch = conn.channel()
 
 
 # Create Queue and Set name
-ch1.queue_declare(queue= 'street1')
+ch.queue_declare(queue= 'street1')
 
 
 # Send message
-ch1.basic_publish(exchange='', routing_key='street1', body=time.ctime())
+ch.basic_publish(exchange='', routing_key='street1', body=time.ctime())
 
 
 # Test send in terminal

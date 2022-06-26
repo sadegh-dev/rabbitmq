@@ -8,11 +8,11 @@ conn = pika.BlockingConnection(pika.ConnectionParameters(
 
 
 # Create channel
-ch2 = conn.channel()
+ch = conn.channel()
 
 
 # Create Queue and Set name
-ch2.queue_declare(queue='street1')
+ch.queue_declare(queue='street1')
 
 
 # Receive message
@@ -20,7 +20,7 @@ def callback(ch, method, properties, body):
     print(f"Recive [{body}]")
 
 
-ch2.basic_consume(
+ch.basic_consume(
     queue = 'street1' ,
     on_message_callback = callback , 
     auto_ack = True
@@ -28,4 +28,4 @@ ch2.basic_consume(
 
 print('Wating for message, to exit press ctl+c')
 
-ch2.start_consuming()
+ch.start_consuming()
