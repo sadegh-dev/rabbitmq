@@ -1,4 +1,3 @@
-import queue
 import pika
 import time
 
