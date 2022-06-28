@@ -12,12 +12,27 @@ ch.exchange_declare(
     exchange_type = 'fanout'
 )
 
+### Way1 ###
+
 result = ch.queue_declare(
     queue = '' , 
     exclusive = True
 )
 
 qname = result.method.queue
+
+######## End of Way1 #####
+
+
+### Way2 ###
+"""
+ch.queue_declare(
+    queue = 'aa'
+)
+qname = 'aa'
+"""
+######## End of Way2 #####
+
 
 ch.queue_bind(
     exchange = 'fan_logs', 
