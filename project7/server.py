@@ -1,5 +1,3 @@
-import queue
-from statistics import correlation
 import pika
 import time
 

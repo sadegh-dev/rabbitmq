@@ -43,13 +43,14 @@ class Sender:
         while self.response is None :
             self.conn.process_data_events()
 
-        return self.response
-        # return int(self.response)
+        return int(self.response)
 
 
 
 send = Sender()
 
-response = send.call(22)
+data_ = input('input number: ')
+
+response = send.call(data_)
 
 print(response)
