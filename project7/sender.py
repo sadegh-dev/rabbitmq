@@ -23,7 +23,8 @@ class Sender:
         )
 
         def my_response(self, ch, method, proper, body):
-            pass
+            if self.corr_id == proper.correlation_id :
+                self.response = body
 
 
 
