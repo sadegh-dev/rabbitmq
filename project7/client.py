@@ -37,13 +37,14 @@ class Sender:
             body = str(n) ,
             properties = pika.BasicProperties(
                 reply_to = self.qname ,
-                correlation_id = self.coor_id ,
+                correlation_id = self.corr_id ,
             )
         )
         while self.response is None :
             self.conn.process_data_events()
 
         return self.response
+        # return int(self.response)
 
 
 
