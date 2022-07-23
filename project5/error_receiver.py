@@ -28,7 +28,7 @@ ch.queue_bind(
     routing_key=level
 )
 
-print('Wating for logs. To exit press CTRL+C')
+print("Wating for logs. To exit press CTRL+C")
 
 def callback(ch, method, properties, body):
     with open('error_logs.log', 'a') as el:
