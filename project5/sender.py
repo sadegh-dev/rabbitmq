@@ -1,5 +1,8 @@
 import pika
 
+
+# Connect to RaabitMQ
+
 conn = pika.BlockingConnection(
 	pika.ConnectionParameters(
 		host='localhost'
@@ -7,6 +10,9 @@ conn = pika.BlockingConnection(
 )
 
 ch  = conn.channel()
+
+
+# Create Exchange
 
 ch.exchange_declare(
 	exchange='direct_logs', 
